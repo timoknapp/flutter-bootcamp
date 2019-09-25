@@ -38,6 +38,7 @@ class _DicePageState extends State<DicePage> {
               onPressed: () {
                 setState(() {
                   dice1 = Random.secure().nextInt(6) + 1;
+                  dice2 = Random.secure().nextInt(6) + 1;
                 });
               },
             ),
@@ -47,6 +48,7 @@ class _DicePageState extends State<DicePage> {
               child: Image.asset('images/dice$dice2.png'),
               onPressed: () {
                 setState(() {
+                  dice1 = Random.secure().nextInt(6) + 1;
                   dice2 = Random.secure().nextInt(6) + 1;
                 });
               },
