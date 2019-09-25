@@ -27,6 +27,13 @@ class _DicePageState extends State<DicePage> {
   int dice1 = Random.secure().nextInt(6) + 1;
   int dice2 = Random.secure().nextInt(6) + 1;
 
+  void rollTheDice() {
+    setState(() {
+      dice1 = Random.secure().nextInt(6) + 1;
+      dice2 = Random.secure().nextInt(6) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -36,10 +43,7 @@ class _DicePageState extends State<DicePage> {
             child: FlatButton(
               child: Image.asset('images/dice$dice1.png'),
               onPressed: () {
-                setState(() {
-                  dice1 = Random.secure().nextInt(6) + 1;
-                  dice2 = Random.secure().nextInt(6) + 1;
-                });
+                rollTheDice();
               },
             ),
           ),
@@ -47,10 +51,7 @@ class _DicePageState extends State<DicePage> {
             child: FlatButton(
               child: Image.asset('images/dice$dice2.png'),
               onPressed: () {
-                setState(() {
-                  dice1 = Random.secure().nextInt(6) + 1;
-                  dice2 = Random.secure().nextInt(6) + 1;
-                });
+                rollTheDice();
               },
             ),
           ),
