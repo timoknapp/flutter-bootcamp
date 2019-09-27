@@ -6,9 +6,7 @@ void main() => runApp(XylophoneApp());
 class XylophoneApp extends StatelessWidget {
   final player = AudioCache();
 
-  void playSound(int soundNr) {
-    player.play('note$soundNr.wav');
-  }
+  void playSound(int soundNr) => player.play('note$soundNr.wav');
 
   Expanded buildKey({int soundNr, Color color}) {
     return Expanded(
