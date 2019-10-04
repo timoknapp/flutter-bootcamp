@@ -51,11 +51,11 @@ class QuizBrain {
   }
 
   String getQuestionText() {
-    return _questions[_questionNr].getQuestionText();
+    return _questions[_questionNr].questionText;
   }
 
   bool getQuestionAnswer() {
-    return _questions[_questionNr].getQuestionAnswer();
+    return _questions[_questionNr].answer;
   }
 
   int getQuestionsLength() {
