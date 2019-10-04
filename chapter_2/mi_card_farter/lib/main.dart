@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Mi Fart',
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
