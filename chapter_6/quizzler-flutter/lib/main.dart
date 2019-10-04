@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'quiz_brain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+
+QuizBrain quizBrain = QuizBrain();
 
 void main() => runApp(Quizzler());
 
@@ -28,32 +32,35 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
 
-  List<String> questions = [
-    'You can lead a cow down stairs but not up stairs.',
-    'Approximately one quarter of human bones are in the feet.',
-    'A slug\'s blood is green.',
-  ];
-
-  List<bool> answers = [
-    false,
-    true,
-    true,
-  ];
-
-  int questionNr = 0;
-
-  void addScore(bool answer) {
-    bool correctAnswer = answer == answers[questionNr] ? true : false;
+  void checkAnswer(bool answer, BuildContext context) {
+    bool correctAnswer = answer == quizBrain.getQuestionAnswer() ? true : false;
 
     setState(() {
-      scoreKeeper.add(Icon(
-        correctAnswer ? Icons.check : Icons.close,
-        color: correctAnswer ? Colors.green : Colors.red,
-      ));
-      if (questionNr == 2) {
-        questionNr = 0;
+      if (quizBrain.isFinished()) {
+        print("close");
+        quizBrain.reset();
+        scoreKeeper.clear();
+        Alert(
+          context: context,
+          title: "The end",
+          desc: "You have reached the end of the quiz.",
+          buttons: [
+            DialogButton(
+              child: Text(
+                "Start again",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              onPressed: () => Navigator.pop(context),
+              width: 120,
+            )
+          ],
+        ).show();
       } else {
-        questionNr++;
+        scoreKeeper.add(Icon(
+          correctAnswer ? Icons.check : Icons.close,
+          color: correctAnswer ? Colors.green : Colors.red,
+        ));
+        quizBrain.nextQuestion();
       }
     });
   }
@@ -70,7 +77,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionNr],
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -95,7 +102,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
-                addScore(true);
+                checkAnswer(true, context);
               },
             ),
           ),
@@ -114,7 +121,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
-                addScore(false);
+                checkAnswer(false, context);
               },
             ),
           ),
