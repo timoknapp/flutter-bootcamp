@@ -44,7 +44,7 @@ class QuizBrain {
 
   bool isFinished() {
     bool done = false;
-    if (_questionNr == _questions.length - 1) {
+    if (_questionNr >= _questions.length - 1) {
       done = true;
     }
     return done;

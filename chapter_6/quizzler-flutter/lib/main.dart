@@ -32,29 +32,18 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
 
-  void checkAnswer(bool answer, BuildContext context) {
+  void checkAnswer(bool answer) {
     bool correctAnswer = answer == quizBrain.getQuestionAnswer() ? true : false;
 
     setState(() {
       if (quizBrain.isFinished()) {
-        print("close");
-        quizBrain.reset();
-        scoreKeeper.clear();
         Alert(
           context: context,
-          title: "The end",
-          desc: "You have reached the end of the quiz.",
-          buttons: [
-            DialogButton(
-              child: Text(
-                "Start again",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              onPressed: () => Navigator.pop(context),
-              width: 120,
-            )
-          ],
+          title: 'The End!',
+          desc: 'You\'ve reached the end of the quiz.',
         ).show();
+        quizBrain.reset();
+        scoreKeeper.clear();
       } else {
         scoreKeeper.add(Icon(
           correctAnswer ? Icons.check : Icons.close,
@@ -71,6 +60,15 @@ class _QuizPageState extends State<QuizPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
+        Expanded(
+          flex: 3,
+          child: Container(
+            child: Image(
+              width: 300.0,
+              image: AssetImage('images/iam_a_coder.png'),
+            ),
+          ),
+        ),
         Expanded(
           flex: 5,
           child: Padding(
@@ -102,7 +100,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
-                checkAnswer(true, context);
+                checkAnswer(true);
               },
             ),
           ),
@@ -121,13 +119,15 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
-                checkAnswer(false, context);
+                checkAnswer(false);
               },
             ),
           ),
         ),
-        Row(
-          children: scoreKeeper,
+        Expanded(
+          child: Row(
+            children: scoreKeeper,
+          ),
         )
       ],
     );
