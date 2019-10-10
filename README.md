@@ -1,7 +1,7 @@
 # The App Brewery - Flutter Bootcamp
 The Complete Flutter Development Bootcamp Using Dart
 
-[The App Brewery](https://www.appbrewery.co)
+[The App Brewery](https://www.appbrewery.co) by [Angela Yu](https://github.com/angelabauer)
 
 ## Chapter 1
 <img width="40%" alt_chapter_1 src="screenshots/flutter_01.png">
