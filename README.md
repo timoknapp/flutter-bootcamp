@@ -23,3 +23,6 @@ The Complete Flutter Development Bootcamp Using Dart
 
 ## Chapter 7
 <img width="40%" alt_chapter_7 src="screenshots/flutter_07.png">
+
+## Chapter 8
+<img width="40%" alt_chapter_8 src="screenshots/flutter_08.png">
