@@ -5,12 +5,14 @@ import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/screens/input_page.dart';
 
 class ResultsPage extends StatelessWidget {
-  ResultsPage({this.gender, this.height, this.weight, this.age});
+  ResultsPage(
+      {@required this.resultText,
+      @required this.bmiResult,
+      @required this.interpretation});
 
-  final Gender gender;
-  final int height;
-  final int weight;
-  final int age;
+  final String resultText;
+  final String bmiResult;
+  final String interpretation;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,8 @@ class ResultsPage extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Container(
+                padding: EdgeInsets.all(15.0),
+                alignment: Alignment.bottomLeft,
                 child: Text(
                   'Your Result',
                   style: kTitleTextStyle,
@@ -39,15 +43,15 @@ class ResultsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'NORMAL',
+                      resultText.toUpperCase(),
                       style: kResultTextStyle,
                     ),
                     Text(
-                      '18.3',
+                      bmiResult,
                       style: kBMITextStyle,
                     ),
                     Text(
-                      'Your BMI is quite low, you should eat more!',
+                      interpretation,
                       textAlign: TextAlign.center,
                       style: kBodyTextStyle,
                     )
