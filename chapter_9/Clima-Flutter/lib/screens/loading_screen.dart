@@ -40,7 +40,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
                 },
                 child: Text('Get Location'),
               ),
-              Text(position == null ? "" : position),
+              Text(position ?? ""),
             ],
           ),
         ),
