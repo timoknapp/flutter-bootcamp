@@ -8,8 +8,7 @@ class NetworkHelper {
   Future getData() async {
     http.Response response = await http.get(url);
     if (response.statusCode == 200) {
-      Map data = jsonDecode(response.body);
-      return data;
+      return jsonDecode(response.body);
     } else {
       print(response.statusCode);
     }

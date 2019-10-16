@@ -24,11 +24,13 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
     NetworkHelper networkHelper = NetworkHelper(
         url:
-            'https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${location.latitude.toString()}&lon=${location.longitude.toString()}&APPID=a5b81c659d67c8dd1389c24f502c8d30');
-    Map weatherData = await networkHelper.getData();
+            'https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${location.latitude}&lon=${location.longitude}&APPID=a5b81c659d67c8dd1389c24f502c8d30');
+    var weatherData = await networkHelper.getData();
 
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return LocationScreen();
+      return LocationScreen(
+        locationWeather: weatherData,
+      );
     }));
   }
 

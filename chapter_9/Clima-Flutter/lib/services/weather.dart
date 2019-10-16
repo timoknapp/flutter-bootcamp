@@ -4,28 +4,13 @@ import 'location.dart';
 import 'networking.dart';
 
 class WeatherModel {
-  WeatherModel(
-      {this.temp,
-      this.pressure,
-      this.humidity,
-      this.tempMin,
-      this.tempMax,
-      this.condition,
-      this.name});
-  double temp;
-  int pressure;
-  int humidity;
-  double tempMin;
-  double tempMax;
+  WeatherModel({this.temp, this.condition, this.name});
+  int temp;
   int condition;
   String name;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
       : temp = json['main']['temp'],
-        pressure = json['main']['pressure'],
-        humidity = json['main']['humidity'],
-        tempMin = json['main']['temp_min'],
-        tempMax = json['main']['temp_max'],
         condition = json['weather'][0]['id'],
         name = json['name'];
 
