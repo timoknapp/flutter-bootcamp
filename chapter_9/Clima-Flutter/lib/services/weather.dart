@@ -9,11 +9,6 @@ class WeatherModel {
   int condition;
   String name;
 
-  WeatherModel.fromJson(Map<String, dynamic> json)
-      : temp = json['main']['temp'],
-        condition = json['weather'][0]['id'],
-        name = json['name'];
-
   String getWeatherIcon(int condition) {
     if (condition < 300) {
       return '🌩';
