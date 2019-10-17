@@ -3,6 +3,9 @@ import 'package:http/http.dart';
 import 'location.dart';
 import 'networking.dart';
 
+const apiKey = 'a5b81c659d67c8dd1389c24f502c8d30';
+const openWeatherMapUrl = 'https://api.openweathermap.org/data/2.5/weather';
+
 class WeatherModel {
   WeatherModel({this.temp, this.condition, this.name});
   int temp;
@@ -41,23 +44,16 @@ class WeatherModel {
     }
   }
 
-  // void getCurrentWeather(Location location) async {
-  //   if (location != null) {
-  //     String url = 'https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${location.latitude.toString()}&lon=${location.longitude.toString()}&APPID=a5b81c659d67c8dd1389c24f502c8d30';
-  //     Future<Response> response = getData(url);
-  //     if (response.statusCode == 200) {
-  //       Map resp = jsonDecode(response.body);
-  //       WeatherModel weatherModel = WeatherModel.fromJson(resp);
-  //       String res =
-  //           '${weatherModel.temp.toStringAsFixed(0)}° in ${weatherModel.name}';
-  //       setState(() {
-  //         weatherData = weatherModel;
-  //         temperatureInCity = res;
-  //         weatherIcon = weatherModel.getWeatherIcon(weatherModel.condition);
-  //         weatherMsg = weatherModel.getMessage(weatherModel.temp.toInt());
-  //       });
-  //     }
-  // }
+  Future<dynamic> getLocationWeather() async {
+    Location location = Location();
+    await location.getCurrentLocation();
+
+    NetworkHelper networkHelper = NetworkHelper(
+        url:
+            '$openWeatherMapUrl?units=metric&lat=${location.latitude}&lon=${location.longitude}&APPID=$apiKey');
+    var weatherData = await networkHelper.getData();
+    return weatherData;
+  }
 }
 
 // {

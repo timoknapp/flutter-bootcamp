@@ -11,21 +11,8 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-  Location location;
-  String temperatureInCity;
-  String weatherMsg;
-  String weatherIcon;
-  WeatherModel weatherData;
-
   void getLocationData() async {
-    Location location = Location();
-    await location.getCurrentLocation();
-    location = location;
-
-    NetworkHelper networkHelper = NetworkHelper(
-        url:
-            'https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${location.latitude}&lon=${location.longitude}&APPID=a5b81c659d67c8dd1389c24f502c8d30');
-    var weatherData = await networkHelper.getData();
+    var weatherData = await WeatherModel().getLocationWeather();
 
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return LocationScreen(
