@@ -31,10 +31,24 @@ const List<String> cryptoList = [
   'LTC',
 ];
 
+const String kcoindataAPI =
+    'https://apiv2.bitcoinaverage.com/indices/global/ticker';
+
 class CoinData {
-  Future<dynamic> getCoinData(String crypto, String currency) async {
-    http.Response response = await http.get(
-        'https://apiv2.bitcoinaverage.com/indices/global/ticker/$crypto$currency');
-    return jsonDecode(response.body)['last'];
+  Future getCoinData(String selectedCurrency) async {
+    Map<String, String> cryptoPrices = {};
+    for (String crypto in cryptoList) {
+      String requestURL = '$kcoindataAPI/$crypto$selectedCurrency';
+      http.Response response = await http.get(requestURL);
+      if (response.statusCode == 200) {
+        var decodedData = jsonDecode(response.body);
+        double lastPrice = decodedData['last'];
+        cryptoPrices[crypto] = lastPrice.toStringAsFixed(0);
+      } else {
+        print(response.statusCode);
+        throw 'Problem with the get request';
+      }
+    }
+    return cryptoPrices;
   }
 }
