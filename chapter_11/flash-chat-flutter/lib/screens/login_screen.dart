@@ -1,4 +1,3 @@
-import 'package:flash_chat/components/RoundedButton.dart';
 import 'package:flash_chat/components/rounded_button.dart';
 import 'package:flutter/material.dart';
 
