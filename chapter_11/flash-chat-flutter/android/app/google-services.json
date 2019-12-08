@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "673004861899",
+    "firebase_url": "https://flutter-flashchat-f6431.firebaseio.com",
+    "project_id": "flutter-flashchat-f6431",
+    "storage_bucket": "flutter-flashchat-f6431.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673004861899:android:c923cacb0fc256191dde4e",
+        "android_client_info": {
+          "package_name": "com.timoknapp.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673004861899-u8bo0d4s4jupubcfaqnkmv9uj9rv5cpr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw6tGipXa8DxeNpORs-VP9vgiq0Wks45k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673004861899-u8bo0d4s4jupubcfaqnkmv9uj9rv5cpr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
