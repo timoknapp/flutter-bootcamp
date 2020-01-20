@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:navigation_demo_starter/screen1.dart';
-import 'package:navigation_demo_starter/screen2.dart';
 
 class Screen0 extends StatelessWidget {
   @override
