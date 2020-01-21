@@ -30,4 +30,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: chapter-1
-        path: build/app/outputs/apk/release/app-release.apk
+        path: chapter_1/im_a_coder/build/app/outputs/apk/release/app-release.apk
