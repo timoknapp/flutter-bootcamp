@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: cd chapter_1/im_a_coder
+    - name: Flutter CLI
+      uses: steebchen/flutter@v1.0.0
