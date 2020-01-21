@@ -11,13 +11,14 @@ jobs:
     
     - uses: steebchen/flutter@v1.0.0
     - name: install dependencies
-      working-directory: ${{env.working-directory}} 
       run: flutter pub get
-
-    - name: run tests
       working-directory: ${{env.working-directory}} 
-      run: flutter test
+
+    #- name: run tests
+    #  run: flutter test
+    #  working-directory: ${{env.working-directory}} 
 
     - name: build apk
+      run: flutter build apk --release      
       working-directory: ${{env.working-directory}} 
-      run: flutter build apk --release
+
