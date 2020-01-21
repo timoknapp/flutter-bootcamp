@@ -27,23 +27,25 @@ jobs:
         with:
           name: chapter-1
           path: chapter_1/im_a_coder/build/app/outputs/apk/release/app-release.apk
+
       # - name: Flutter Chapter 2
-      # - run: flutter pub get
-      #   working-directory: ./chapter_2/mi_card_farter
-      # - run: flutter build apk
-      #   working-directory: ./chapter_2/mi_card_farter
-      # - name: Create a Release APK
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: chapter-2
-      #     path: chapter_2/mi_card_farter/build/app/outputs/apk/release/app-release.apk
+      - run: flutter pub get
+        working-directory: ./chapter_2/mi_card_farter
+      - run: flutter build apk
+        working-directory: ./chapter_2/mi_card_farter
+      - name: Create a Release APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: chapter-2
+          path: chapter_2/mi_card_farter/build/app/outputs/apk/release/app-release.apk
+
       # - name: Flutter Chapter 3
-      # - run: flutter pub get
-      #   working-directory: ./chapter_3/dicee-flutter
-      # - run: flutter build apk
-      #   working-directory: ./chapter_3/dicee-flutter
-      # - name: Create a Release APK
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: chapter-3
-      #     path: chapter_3/dicee-flutter/build/app/outputs/apk/release/app-release.apk
+      - run: flutter pub get
+        working-directory: ./chapter_3/dicee-flutter
+      - run: flutter build apk
+        working-directory: ./chapter_3/dicee-flutter
+      - name: Create a Release APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: chapter-3
+          path: chapter_3/dicee-flutter/build/app/outputs/apk/release/app-release.apk
