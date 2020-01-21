@@ -11,8 +11,11 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: 'stable' # or: 'dev' or 'beta'
-    - run: cd chapter_1/im_a_coder
     - run: ls -la
+      working-directory: ./chapter_1/im_a_coder
     - run: flutter pub get
+      working-directory: ./chapter_1/im_a_coder
     - run: flutter test
+      working-directory: ./chapter_1/im_a_coder
     - run: flutter build apk
+      working-directory: ./chapter_1/im_a_coder
