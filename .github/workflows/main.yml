@@ -2,7 +2,6 @@ on: push
 name: Test, Build and Release apk
 jobs:
   build:
-    name: Build APK
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -11,13 +10,8 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '1.7.8+hotfix.4'
-    - run: cd chapter_1/im_a_coder/
+        channel: 'stable' # or: 'dev' or 'beta'
+    - run: cd chapter_1/im_a_coder
     - run: flutter pub get
     - run: flutter test
-    - run: flutter build apk --debug --split-per-abi
-    - name: Create a Release APK
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: "build/app/outputs/apk/debug/*.apk"
-        token: ${{ secrets.TOKEN }}
+    - run: flutter build apk
