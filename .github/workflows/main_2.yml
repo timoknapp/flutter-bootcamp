@@ -1,15 +1,26 @@
-name: CI
-
-on: [push]
-
+on: push
+name: build and test app
 jobs:
   build:
-
+    name: install dependencies
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
+    - name: pre-set
       run: cd chapter_1/im_a_coder
-    - name: Flutter CLI
+      
+    - uses: actions/checkout@v1
+
+    - name: install dependencies
       uses: steebchen/flutter@v1.0.0
+      with:
+        args: pub get
+
+    - name: run tests
+      uses: steebchen/flutter@v1.0.0
+      with:
+        args: test
+
+    - name: build apk
+      uses: steebchen/flutter@v1.0.0
+      with:
+        args: build apk --release
