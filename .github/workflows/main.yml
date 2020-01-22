@@ -3,6 +3,8 @@ name: Test, Build and Release apk
 jobs:
   chapter-1:
     runs-on: ubuntu-latest
+    env:
+      dir: ./chapter_1/im_a_coder
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
@@ -13,19 +15,19 @@ jobs:
           channel: "stable" # or: 'dev' or 'beta'
 
       - run: flutter pub get
-        working-directory: ./chapter_1/im_a_coder
+        working-directory: ${{env.dir}}
 
       #- run: flutter test
-      #  working-directory: ./chapter_1/im_a_coder
+      #  working-directory: ${{env.dir}}
 
       - run: flutter build apk
-        working-directory: ./chapter_1/im_a_coder
+        working-directory: ${{env.dir}}
 
       - name: Create a Release APK
         uses: actions/upload-artifact@v1
         with:
           name: chapter-1
-          path: chapter_1/im_a_coder/build/app/outputs/apk/release/app-release.apk
+          path: ${{env.dir}}/build/app/outputs/apk/release/app-release.apk
 
   chapter-2:
     runs-on: ubuntu-latest
