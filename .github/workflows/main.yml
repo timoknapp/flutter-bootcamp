@@ -3,6 +3,9 @@ name: Test, Build and Release apk
 jobs:
   chapter-1:
     runs-on: ubuntu-latest
+    env:
+      dir: ./chapter_1/im_a_coder
+      artifact-name: chapter-1
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
@@ -11,24 +14,24 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable" # or: 'dev' or 'beta'
-
       - run: flutter pub get
-        working-directory: ./chapter_1/im_a_coder
-
+        working-directory: ${{env.dir}}
       #- run: flutter test
       #  working-directory: ./chapter_1/im_a_coder
-
       - run: flutter build apk
-        working-directory: ./chapter_1/im_a_coder
+        working-directory: ${{env.dir}}
 
       - name: Create a Release APK
         uses: actions/upload-artifact@v1
         with:
-          name: chapter-1
-          path: chapter_1/im_a_coder/build/app/outputs/apk/release/app-release.apk
+          name: ${{env.artifact-name}}
+          path: ${{env.dir}}/build/app/outputs/apk/release/app-release.apk
 
   chapter-2:
     runs-on: ubuntu-latest
+    env:
+      dir: ./chapter_2/mi_card_farter
+      artifact-name: chapter-2
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
@@ -38,17 +41,20 @@ jobs:
         with:
           channel: "stable" # or: 'dev' or 'beta'
       - run: flutter pub get
-        working-directory: ./chapter_2/mi_card_farter
+        working-directory: ${{env.dir}}
       - run: flutter build apk
-        working-directory: ./chapter_2/mi_card_farter
+        working-directory: ${{env.dir}}
       - name: Create a Release APK
         uses: actions/upload-artifact@v1
         with:
-          name: chapter-2
-          path: chapter_2/mi_card_farter/build/app/outputs/apk/release/app-release.apk
+          name: ${{env.artifact-name}}
+          path: ${{env.dir}}/build/app/outputs/apk/release/app-release.apk
 
   chapter-3:
     runs-on: ubuntu-latest
+    env:
+      dir: ./chapter_3/dicee-flutter
+      artifact-name: chapter-3
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
@@ -58,11 +64,34 @@ jobs:
         with:
           channel: "stable" # or: 'dev' or 'beta'
       - run: flutter pub get
-        working-directory: ./chapter_3/dicee-flutter
+        working-directory: ${{env.dir}}
       - run: flutter build apk
-        working-directory: ./chapter_3/dicee-flutter
+        working-directory: ${{env.dir}}
       - name: Create a Release APK
         uses: actions/upload-artifact@v1
         with:
-          name: chapter-3
-          path: chapter_3/dicee-flutter/build/app/outputs/apk/release/app-release.apk
+          name: ${{env.artifact-name}}
+          path: ${{env.dir}}/build/app/outputs/apk/release/app-release.apk
+
+  chapter-4:
+    runs-on: ubuntu-latest
+    env:
+      dir: ./chapter_4/magic-8-ball-flutter
+      artifact-name: chapter-4
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable" # or: 'dev' or 'beta'
+      - run: flutter pub get
+        working-directory: ${{env.dir}}
+      - run: flutter build apk
+        working-directory: ${{env.dir}}
+      - name: Create a Release APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{env.artifact-name}}
+          path: ${{env.dir}}/build/app/outputs/apk/release/app-release.apk
