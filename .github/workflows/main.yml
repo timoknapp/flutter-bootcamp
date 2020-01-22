@@ -145,7 +145,7 @@ jobs:
   chapter-7:
     runs-on: ubuntu-latest
     env:
-      dir: ./chapter_7/destiny-challenge-starting
+      dir: ./chapter_7/destini-challenge-starting
       artifact-name: chapter-7
     steps:
       - uses: actions/checkout@v1
