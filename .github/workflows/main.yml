@@ -1,7 +1,7 @@
 on: push
 name: Test, Build and Release apk
 jobs:
-  build:
+  chapter-1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -12,7 +12,6 @@ jobs:
         with:
           channel: "stable" # or: 'dev' or 'beta'
 
-      # - name: Flutter Chapter 1
       - run: flutter pub get
         working-directory: ./chapter_1/im_a_coder
 
@@ -28,7 +27,16 @@ jobs:
           name: chapter-1
           path: chapter_1/im_a_coder/build/app/outputs/apk/release/app-release.apk
 
-      # - name: Flutter Chapter 2
+  chapter-2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable" # or: 'dev' or 'beta'
       - run: flutter pub get
         working-directory: ./chapter_2/mi_card_farter
       - run: flutter build apk
@@ -39,7 +47,16 @@ jobs:
           name: chapter-2
           path: chapter_2/mi_card_farter/build/app/outputs/apk/release/app-release.apk
 
-      # - name: Flutter Chapter 3
+  chapter-3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable" # or: 'dev' or 'beta'
       - run: flutter pub get
         working-directory: ./chapter_3/dicee-flutter
       - run: flutter build apk
