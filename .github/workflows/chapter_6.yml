@@ -1,5 +1,5 @@
 on: push
-name: Chapter-1 Release
+name: Chapter-6 Release
 jobs:
   chapter-6:
     runs-on: ubuntu-latest
