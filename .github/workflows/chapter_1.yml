@@ -4,7 +4,7 @@ env:
 on:
   push:
     paths:
-      - "chapter_1/im_a_coder/**"
+      - "${{env.dir}}/**"
 
 name: Chapter-1 Release
 jobs:
