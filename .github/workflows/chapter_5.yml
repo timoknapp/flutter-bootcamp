@@ -1,0 +1,25 @@
+on: push
+name: Chapter-1 Release
+jobs:
+  chapter-5:
+    runs-on: ubuntu-latest
+    env:
+      dir: ./chapter_5/xylophone-flutter
+      artifact-name: chapter-5
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable" # or: 'dev' or 'beta'
+      - run: flutter pub get
+        working-directory: ${{env.dir}}
+      # - run: flutter build apk
+      #   working-directory: ${{env.dir}}
+      # - name: Create a Release APK
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: ${{env.artifact-name}}
+      #     path: ${{env.dir}}/build/app/outputs/apk/release/app-release.apk
