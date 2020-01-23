@@ -1,11 +1,14 @@
-on: push
+env:
+  dir: ./chapter_4/magic-8-ball-flutter
+  artifact-name: chapter-4
+on:
+  push:
+    paths:
+      - "chapter_4/magic-8-ball-flutter/**"
 name: Chapter-4 Release
 jobs:
   chapter-4:
     runs-on: ubuntu-latest
-    env:
-      dir: ./chapter_4/magic-8-ball-flutter
-      artifact-name: chapter-4
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1

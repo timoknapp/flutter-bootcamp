@@ -4,7 +4,7 @@ env:
 on:
   push:
     paths:
-      - ${{env.dir}}/**
+      - "chapter_2/mi_card_farter/**"
 name: Chapter-2 Release
 jobs:
   chapter-2:
