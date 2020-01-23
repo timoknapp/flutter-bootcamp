@@ -111,13 +111,13 @@ jobs:
           channel: "stable" # or: 'dev' or 'beta'
       - run: flutter pub get
         working-directory: ${{env.dir}}
-      - run: flutter build apk
-        working-directory: ${{env.dir}}
-      - name: Create a Release APK
-        uses: actions/upload-artifact@v1
-        with:
-          name: ${{env.artifact-name}}
-          path: ${{env.dir}}/build/app/outputs/apk/release/app-release.apk
+      # - run: flutter build apk
+      #   working-directory: ${{env.dir}}
+      # - name: Create a Release APK
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: ${{env.artifact-name}}
+      #     path: ${{env.dir}}/build/app/outputs/apk/release/app-release.apk
 
   chapter-6:
     runs-on: ubuntu-latest
@@ -249,11 +249,10 @@ jobs:
           channel: "stable" # or: 'dev' or 'beta'
       - run: flutter pub get
         working-directory: ${{env.dir}}
-      - run: flutter build apk
-        working-directory: ${{env.dir}}
-      - name: Create a Release APK
-        uses: actions/upload-artifact@v1
-        with:
-          name: ${{env.artifact-name}}
-          path: ${{env.dir}}/build/app/outputs/apk/release/app-release.apk
-
+      # - run: flutter build apk
+      #   working-directory: ${{env.dir}}
+      # - name: Create a Release APK
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: ${{env.artifact-name}}
+      #     path: ${{env.dir}}/build/app/outputs/apk/release/app-release.apk
