@@ -1,6 +1,6 @@
 # im_a_coder
 
-A new Flutter project.
+A new Flutter project
 
 ## Getting Started
 
