@@ -14,11 +14,13 @@ class _ChatScreenState extends State<ChatScreen> {
   final _auth = FirebaseAuth.instance;
   FirebaseUser loggedInUser;
   String messageText;
+  List<Text> messages = [];
 
   @override
   void initState() {
     super.initState();
     getCurrentUser();
+    messagesStream();
   }
 
   void getCurrentUser() async {
@@ -30,6 +32,17 @@ class _ChatScreenState extends State<ChatScreen> {
       }
     } catch (e) {
       print(e);
+    }
+  }
+
+  void messagesStream() async {
+    await for (var snapshot in _firestore.collection('messages').snapshots()) {
+      for (var message in snapshot.documents) {
+        print(message.data);
+        setState(() {
+          messages.add(Text(message.data['text']));
+        });
+      }
     }
   }
 
@@ -58,6 +71,30 @@ class _ChatScreenState extends State<ChatScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            StreamBuilder<QuerySnapshot>(
+              stream: _firestore.collection('messages').snapshots(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: CircularProgressIndicator(
+                      backgroundColor: Colors.lightBlueAccent,
+                    ),
+                  );
+                }
+                final messages = snapshot.data.documents;
+                List<Text> messageWidgets = [];
+                for (var msg in messages) {
+                  final messageText = msg.data['text'];
+                  final messageSender = msg.data['sender'];
+
+                  final messageWidget = Text('$messageSender: $messageText');
+                  messageWidgets.add(messageWidget);
+                }
+                return Column(
+                  children: messageWidgets,
+                );
+              },
+            ),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
