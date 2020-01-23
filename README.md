@@ -1,8 +1,6 @@
 # The App Brewery - Flutter Bootcamp
 The Complete Flutter Development Bootcamp Using Dart
 
-![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Test,%20Build%20and%20Release%20apk/badge.svg)
-
 [The App Brewery](https://www.appbrewery.co) by [Angela Yu](https://github.com/angelabauer)
 
 This repo consolidates all the apps which you are going to build throughout the chapters of the course.
