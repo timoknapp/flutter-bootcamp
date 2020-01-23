@@ -1,11 +1,14 @@
-on: push
+env:
+  dir: ./chapter_2/mi_card_farter
+  artifact-name: chapter-2
+on:
+  push:
+    paths:
+      - ${{env.dir}}
 name: Chapter-2 Release
 jobs:
   chapter-2:
     runs-on: ubuntu-latest
-    env:
-      dir: ./chapter_2/mi_card_farter
-      artifact-name: chapter-2
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
