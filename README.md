@@ -6,32 +6,32 @@ The Complete Flutter Development Bootcamp Using Dart
 This repo consolidates all the apps which you are going to build throughout the chapters of the course.
 
 
-## Chapter 1 - Simple App
+## Chapter 1 - Simple Start
 ![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-1%20Release/badge.svg)
 
 <img width="35%" alt_chapter_1 src="screenshots/flutter_01.png">
 
-## Chapter 2 - Business Contact App
+## Chapter 2 - Business Contact
 ![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-2%20Release/badge.svg)
 
 <img width="35%" alt_chapter_2 src="screenshots/flutter_02.png">
 
-## Chapter 3 - Rolling the Dice App
+## Chapter 3 - Rolling the Dice
 ![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-3%20Release/badge.svg)
 
 <img width="35%" alt_chapter_3 src="screenshots/flutter_03.png">
 
-## Chapter 4 - Oracle, Ask me Anything App
+## Chapter 4 - Oracle, Ask me Anything
 ![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-4%20Release/badge.svg)
 
 <img width="35%" alt_chapter_4 src="screenshots/flutter_04.png">
 
-## Chapter 5 - Xylophone App (best ever made)
+## Chapter 5 - Xylophone (best ever made)
 ![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-5%20Release/badge.svg)
 
 <img width="35%" alt_chapter_5 src="screenshots/flutter_05.png">
 
-## Chapter 6 - True/False Knowsledge App
+## Chapter 6 - True/False Knowsledge
 ![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-6%20Release/badge.svg)
 
 <img width="35%" alt_chapter_6 src="screenshots/flutter_06.png">
@@ -46,7 +46,7 @@ This repo consolidates all the apps which you are going to build throughout the 
 
 <img width="35%" alt_chapter_8 src="screenshots/flutter_08.png">
 
-## Chapter 9 - Weather App
+## Chapter 9 - Weather
 ![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-9%20Release/badge.svg)
 
 <img width="35%" alt_chapter_9 src="screenshots/flutter_09.png">
@@ -56,7 +56,7 @@ This repo consolidates all the apps which you are going to build throughout the 
 
 <img width="35%" alt_chapter_10 src="screenshots/flutter_10.png">
 
-## Chapter 11 - Flash Chat App
+## Chapter 11 - Flash Chat
 ![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-11%20Release/badge.svg)
 
 <img width="35%" alt_chapter_11 src="screenshots/flutter_11.png">
