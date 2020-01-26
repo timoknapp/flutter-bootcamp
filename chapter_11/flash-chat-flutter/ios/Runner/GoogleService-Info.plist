@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>GOOGLE_CLIENT_ID</string>
+	<string>GOOGLE_CLIENT_ID_IOS</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>GOOGLE_CLIENT_ID_REV</string>
+	<string>GOOGLE_CLIENT_ID_REV_IOS</string>
 	<key>API_KEY</key>
-	<string>GOOGLE_API_KEY</string>
+	<string>GOOGLE_API_KEY_IOS</string>
 	<key>GCM_SENDER_ID</key>
 	<string>673004861899</string>
 	<key>PLIST_VERSION</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>GOOGLE_APP_ID</string>
+	<string>GOOGLE_APP_ID_IOS</string>
 	<key>DATABASE_URL</key>
 	<string>GOOGLE_DATABASE_URL</string>
 </dict>

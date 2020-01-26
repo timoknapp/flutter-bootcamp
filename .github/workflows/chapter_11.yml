@@ -1,11 +1,6 @@
 env:
   dir: ./chapter_11/flash-chat-flutter
   artifact-name: chapter-11
-  GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-  GOOGLE_APP_ID: ${{ secrets.GOOGLE_APP_ID }}
-  GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-  GOOGLE_CLIENT_ID_REV: ${{ secrets.GOOGLE_CLIENT_ID_REV }}
-  GOOGLE_DATABASE_URL: ${{ secrets.GOOGLE_DATABASE_URL }}
 on:
   push:
     paths:
@@ -22,7 +17,8 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable" # or: 'dev' or 'beta'
-      - run: sed -i -e 's/GOOGLE_API_KEY/${{secrets.GOOGLE_API_KEY}}/g' ${{env.dir}}/ios/Runner/GoogleService-Info.plist && sed -i -e 's/GOOGLE_APP_ID/${{secrets.GOOGLE_APP_ID}}/g' ${{env.dir}}/ios/Runner/GoogleService-Info.plist && sed -i -e 's/GOOGLE_CLIENT_ID/${{secrets.GOOGLE_CLIENT_ID}}/g' ${{env.dir}}/ios/Runner/GoogleService-Info.plist && sed -i -e 's/GOOGLE_CLIENT_ID_REV/${{secrets.GOOGLE_CLIENT_ID_REV}}/g' ${{env.dir}}/ios/Runner/GoogleService-Info.plist && sed -i -e 's/GOOGLE_DATABASE_URL/${{secrets.GOOGLE_DATABASE_URL}}/g' ${{env.dir}}/ios/Runner/GoogleService-Info.plist
+      - run: sed -i -e 's/GOOGLE_API_KEY_IOS/${{secrets.GOOGLE_API_KEY_IOS}}/g' ${{env.dir}}/ios/Runner/GoogleService-Info.plist && sed -i -e 's/GOOGLE_APP_ID_IOS/${{secrets.GOOGLE_APP_ID_IOS}}/g' ${{env.dir}}/ios/Runner/GoogleService-Info.plist && sed -i -e 's/GOOGLE_CLIENT_ID_IOS/${{secrets.GOOGLE_CLIENT_ID_IOS}}/g' ${{env.dir}}/ios/Runner/GoogleService-Info.plist && sed -i -e 's/GOOGLE_CLIENT_ID_REV_IOS/${{secrets.GOOGLE_CLIENT_ID_REV_IOS}}/g' ${{env.dir}}/ios/Runner/GoogleService-Info.plist && sed -i -e 's/GOOGLE_DATABASE_URL/${{secrets.GOOGLE_DATABASE_URL}}/g' ${{env.dir}}/ios/Runner/GoogleService-Info.plist
+      - run: sed -i -e 's/GOOGLE_API_KEY_ANDROID/${{secrets.GOOGLE_API_KEY_ANDROID}}/g' ${{env.dir}}/android/app/google-services.json && sed -i -e 's/GOOGLE_APP_ID_ANDROID/${{secrets.GOOGLE_APP_ID_ANDROID}}/g' ${{env.dir}}/android/app/google-services.json && sed -i -e 's/GOOGLE_CLIENT_ID_ANDROID/${{secrets.GOOGLE_CLIENT_ID_ANDROID}}/g' ${{env.dir}}/android/app/google-services.json && sed -i -e 's/GOOGLE_DATABASE_URL/${{secrets.GOOGLE_DATABASE_URL}}/g' ${{env.dir}}/android/app/google-services.json
       - run: flutter pub get
         working-directory: ${{env.dir}}
       - run: flutter build apk
