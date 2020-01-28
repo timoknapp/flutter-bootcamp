@@ -20,8 +20,9 @@ jobs:
           channel: "stable" # or: "dev" or "beta"
       - name: Setup envs
         run: |
-          'echo "$GOOGLE_ANDROID_CONFIG" > "$APP_DIR"/android/app/google-services.json'
-          'echo "$GOOGLE_IOS_CONFIG" > "$APP_DIR"/ios/Runner/GoogleService-Info.plist'
+          'echo "$GOOGLE_ANDROID_CONFIG" > android/app/google-services.json'
+          'echo "$GOOGLE_IOS_CONFIG" > ios/Runner/GoogleService-Info.plist'
+        working-directory: ${{ env.dir }}
         env:
           GOOGLE_ANDROID_CONFIG: ${{ secrets.GOOGLE_ANDROID_JSON }}
           GOOGLE_IOS_CONFIG: ${{ secrets.GOOGLE_IOS_PLIST }}
