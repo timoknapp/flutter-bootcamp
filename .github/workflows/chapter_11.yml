@@ -20,10 +20,8 @@ jobs:
           channel: "stable" # or: "dev" or "beta"
       - name: Setup envs
         run: |
-          'TMP_DIR=`pwd`'
-          'echo $TMP_DIR'
-          'echo "$GOOGLE_ANDROID_CONFIG" > "$TMP_DIR"/android/app/google-services.json'
-          'echo "$GOOGLE_IOS_CONFIG" > "$TMP_DIR"/ios/Runner/GoogleService-Info.plist'
+          'echo "$GOOGLE_ANDROID_CONFIG" > /home/runner/work/flutter-bootcamp/flutter-bootcamp/chapter_11/flash-chat-flutter/android/app/google-services.json'
+          'echo "$GOOGLE_IOS_CONFIG" > /home/runner/work/flutter-bootcamp/flutter-bootcamp/chapter_11/flash-chat-flutter/ios/Runner/GoogleService-Info.plist'
         working-directory: ${{ env.dir }}
         env:
           GOOGLE_ANDROID_CONFIG: ${{ secrets.GOOGLE_ANDROID_JSON }}
