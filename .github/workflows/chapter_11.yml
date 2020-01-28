@@ -1,7 +1,7 @@
 env:
   dir: ./chapter_11/flash-chat-flutter
   artifact-name: chapter-11
-  APP_DIR: chapter_11/flash-chat-flutter
+  APP_DIR: ./chapter_11/flash-chat-flutter
 on:
   push:
     paths:
@@ -19,9 +19,8 @@ jobs:
         with:
           channel: "stable" # or: "dev" or "beta"
       - name: Setup envs
-        run: |
-          'echo "$GOOGLE_ANDROID_CONFIG" > "$APP_DIR"/android/app/google-services.json'
-          'echo "$GOOGLE_IOS_CONFIG" > "$APP_DIR"/ios/Runner/GoogleService-Info.plist'
+        run: 'echo "$GOOGLE_ANDROID_CONFIG" > "$APP_DIR"/android/app/google-services.json'
+        run: 'echo "$GOOGLE_IOS_CONFIG" > "$APP_DIR"/ios/Runner/GoogleService-Info.plist'
         env:
           GOOGLE_ANDROID_CONFIG: ${{ secrets.GOOGLE_ANDROID_JSON }}
           GOOGLE_IOS_CONFIG: ${{ secrets.GOOGLE_IOS_PLIST }}
