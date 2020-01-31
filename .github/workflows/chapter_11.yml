@@ -22,7 +22,7 @@ jobs:
       #   run: |
       #     'echo "$GOOGLE_ANDROID_CONFIG" > /home/runner/work/flutter-bootcamp/flutter-bootcamp/chapter_11/flash-chat-flutter/android/app/google-services.json'
       #     'echo "$GOOGLE_IOS_CONFIG" > /home/runner/work/flutter-bootcamp/flutter-bootcamp/chapter_11/flash-chat-flutter/ios/Runner/GoogleService-Info.plist'
-      #   with:
+      #   env:
       #     GOOGLE_ANDROID_CONFIG: ${{ secrets.GOOGLE_ANDROID_JSON }}
       #     GOOGLE_IOS_CONFIG: ${{ secrets.GOOGLE_IOS_PLIST }}
       - run: flutter pub get
