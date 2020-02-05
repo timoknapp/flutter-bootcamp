@@ -60,3 +60,8 @@ This repo consolidates all the apps which you are going to build throughout the 
 ![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-11%20Release/badge.svg)
 
 <img width="35%" alt_chapter_11 src="screenshots/flutter_11.png">
+
+## Chapter 12 - Todoey
+![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-12%20Release/badge.svg)
+
+<img width="35%" alt_chapter_11 src="screenshots/flutter_12.png">
