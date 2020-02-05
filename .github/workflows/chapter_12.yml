@@ -7,7 +7,7 @@ on:
       - "chapter_12/todoey-flutter/**"
 name: Chapter-12 Release
 jobs:
-  chapter-9:
+  chapter-12:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
