@@ -27,7 +27,7 @@ class _TasksListsState extends State<TasksLists> {
           taskTitle: tasks[index].name,
           toggleCheckbox: (bool checkboxState) {
             setState(() {
-              tasks[index].isDone = checkboxState;
+              tasks[index].toggleDone();
             });
           },
         );
