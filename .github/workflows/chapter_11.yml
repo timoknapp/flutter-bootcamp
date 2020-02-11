@@ -18,15 +18,23 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable" # or: "dev" or "beta"
-      # - name: Setup envs
+      - name: Decrypt Secrets
+        run: ./.github/scripts/decrypt_secret.sh
+        env:
+          SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
+      # This command is just an example to show your secret being printed
+      # Ensure you remove any print statements of your secrets. GitHub does
+      # not hide secrets that use this workaround.
+      - name: Test printing your secret (Remove this step in production)
+        run: cat /home/runner/work/flutter-bootcamp/flutter-bootcamp/chapter_11/flash-chat-flutter/android/app/google-services.json
       #   run: |
       #     'echo "$GOOGLE_ANDROID_CONFIG" > /home/runner/work/flutter-bootcamp/flutter-bootcamp/chapter_11/flash-chat-flutter/android/app/google-services.json'
       #     'echo "$GOOGLE_IOS_CONFIG" > /home/runner/work/flutter-bootcamp/flutter-bootcamp/chapter_11/flash-chat-flutter/ios/Runner/GoogleService-Info.plist'
       #   env:
       #     GOOGLE_ANDROID_CONFIG: ${{ secrets.GOOGLE_ANDROID_JSON }}
       #     GOOGLE_IOS_CONFIG: ${{ secrets.GOOGLE_IOS_PLIST }}
-      - run: flutter pub get
-        working-directory: ${{ env.dir }}
+      # - run: flutter pub get
+      #   working-directory: ${{ env.dir }}
       # - run: flutter build apk
       #   working-directory: ${{ env.dir }}
       # - name: Create a Release APK
