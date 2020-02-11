@@ -22,11 +22,6 @@ jobs:
         run: ./.github/scripts/decrypt_secret.sh
         env:
           SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
-      # This command is just an example to show your secret being printed
-      # Ensure you remove any print statements of your secrets. GitHub does
-      # not hide secrets that use this workaround.
-      - name: Test printing your secret (Remove this step in production)
-        run: cat ${{env.dir}}/android/app/google-services.json
       - run: flutter pub get
         working-directory: ${{ env.dir }}
       - run: flutter build apk
