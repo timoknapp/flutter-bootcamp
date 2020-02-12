@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todoey_flutter/models/task.dart';
 import 'package:todoey_flutter/models/task_data.dart';
 import 'package:todoey_flutter/screens/add_task_screen.dart';
 import 'package:todoey_flutter/widgets/task_list.dart';
@@ -21,11 +20,7 @@ class TasksScreen extends StatelessWidget {
                     bottom: MediaQuery.of(context).viewInsets.bottom),
                 child: AddTaskScreen(
                   (taskTitle) {
-                    // setState(() {
-                    //   Provider.of<TaskData>(context)
-                    //       .tasks
-                    //       .add(Task(name: taskTitle));
-                    // });
+                    Provider.of<TaskData>(context).addTask(taskTitle);
                     Navigator.pop(context);
                   },
                 ),
@@ -70,7 +65,7 @@ class TasksScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '${Provider.of<TaskData>(context).tasks.length} Tasks',
+                  '${Provider.of<TaskData>(context).taskCount} Tasks',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
