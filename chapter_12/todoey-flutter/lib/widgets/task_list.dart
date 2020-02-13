@@ -17,7 +17,7 @@ class TasksLists extends StatelessWidget {
               taskData.updateTask(task);
             },
             deleteTask: () {
-              taskData.deleteTask(index);
+              taskData.deleteTask(task);
             },
           );
         },
