@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:todoey_flutter/models/task_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
+  final Color primaryColor = Colors.indigo;
   String taskTitle;
 
   @override
@@ -26,7 +27,7 @@ class AddTaskScreen extends StatelessWidget {
               'Add Task',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.lightBlueAccent,
+                color: primaryColor,
                 fontSize: 30.0,
               ),
             ),
@@ -45,7 +46,7 @@ class AddTaskScreen extends StatelessWidget {
             ),
             FlatButton(
                 child: Text('Add'),
-                color: Colors.lightBlueAccent,
+                color: primaryColor,
                 textColor: Colors.white,
                 onPressed: () {
                   Provider.of<TaskData>(context).addTask(taskTitle);

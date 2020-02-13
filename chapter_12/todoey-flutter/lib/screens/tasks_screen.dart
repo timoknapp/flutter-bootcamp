@@ -5,10 +5,11 @@ import 'package:todoey_flutter/screens/add_task_screen.dart';
 import 'package:todoey_flutter/widgets/task_list.dart';
 
 class TasksScreen extends StatelessWidget {
+  final Color primaryColor = Colors.indigo;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: primaryColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
@@ -23,7 +24,7 @@ class TasksScreen extends StatelessWidget {
             ),
           );
         },
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: primaryColor,
         child: Icon(Icons.add),
       ),
       body: Column(
@@ -45,7 +46,7 @@ class TasksScreen extends StatelessWidget {
                   child: Icon(
                     Icons.list,
                     size: 30.0,
-                    color: Colors.lightBlueAccent,
+                    color: primaryColor,
                   ),
                 ),
                 SizedBox(
