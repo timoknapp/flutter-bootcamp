@@ -14,7 +14,10 @@ class TasksLists extends StatelessWidget {
             isChecked: task.isDone,
             taskTitle: task.name,
             toggleCheckbox: (bool checkboxState) {
-              taskData.toggleDone(task);
+              taskData.updateTask(task);
+            },
+            deleteTask: () {
+              taskData.deleteTask(index);
             },
           );
         },
