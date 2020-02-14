@@ -5,6 +5,18 @@ The Complete Flutter Development Bootcamp Using Dart
 
 This repo consolidates all the apps which you are going to build throughout the chapters of the course.
 
+You can either clone the repo and run the apps on your local machine:
+
+```
+git clone https://github.com/tea-mo903/flutter-bootcamp.git
+cd flutter-bootcamp
+# choose your chapter e.g. 12
+cd chapter_12
+fluttter run
+```
+
+Or you can download the `.apk` files from [github-actions](https://github.com/tea-mo903/flutter-bootcamp/actions).
+
 
 ## Chapter 1 - Simple Start
 ![](https://github.com/tea-mo903/flutter-bootcamp/workflows/Chapter-1%20Release/badge.svg)
