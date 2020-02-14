@@ -5,8 +5,7 @@ The Complete Flutter Development Bootcamp Using Dart
 
 This repo consolidates all the apps which you are going to build throughout the chapters of the course.
 
-You can either clone the repo and run the apps on your local machine:
-
+You can either clone the repo and run the apps on your local machine, but you need to make sure that you have [Flutter-SDK](https://flutter.dev/docs/get-started/install) installed:
 ```
 git clone https://github.com/tea-mo903/flutter-bootcamp.git
 cd flutter-bootcamp
